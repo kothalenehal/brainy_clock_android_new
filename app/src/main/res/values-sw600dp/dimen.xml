@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--  the value of this dimens is values/dimen.xml dp - 40% ex. 66sdp - 40% = 39sdp -->
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_2dp">@dimen/_1sdp</dimen>
+    <dimen name="_3dp">@dimen/_2sdp</dimen>
+    <dimen name="_4dp">@dimen/_2sdp</dimen>
+    <dimen name="_5dp">@dimen/_3sdp</dimen>
+    <dimen name="_6dp">@dimen/_3sdp</dimen>
+    <dimen name="_7dp">@dimen/_4sdp</dimen>
+    <dimen name="_8dp">@dimen/_4sdp</dimen>
+    <dimen name="_9dp">@dimen/_5sdp</dimen>
+    <dimen name="_10dp">@dimen/_6sdp</dimen>
+    <dimen name="_11dp">@dimen/_6sdp</dimen>
+    <dimen name="_12dp">@dimen/_7sdp</dimen>
+    <dimen name="_13dp">@dimen/_7sdp</dimen>
+    <dimen name="_14dp">@dimen/_8sdp</dimen>
+    <dimen name="_15dp">@dimen/_9sdp</dimen>
+    <dimen name="_16dp">@dimen/_9sdp</dimen>
+    <dimen name="_19dp">@dimen/_11sdp</dimen>
+    <dimen name="_20dp">@dimen/_12sdp</dimen>
+    <dimen name="_22dp">@dimen/_13sdp</dimen>
+    <dimen name="_25dp">@dimen/_15sdp</dimen>
+    <dimen name="_26dp">@dimen/_15sdp</dimen>
+    <dimen name="_27dp">@dimen/_26sdp</dimen>
+    <dimen name="_28dp">@dimen/_16sdp</dimen>
+    <dimen name="_30dp">@dimen/_18sdp</dimen>
+    <dimen name="_32dp">@dimen/_24sdp</dimen>
+    <dimen name="_35dp">@dimen/_21sdp</dimen>
+    <dimen name="_38dp">@dimen/_22sdp</dimen>
+    <dimen name="_44dp">@dimen/_26sdp</dimen>
+    <dimen name="_46dp">@dimen/_27sdp</dimen>
+    <dimen name="_48dp">@dimen/_28sdp</dimen>
+    <dimen name="_51dp">@dimen/_30sdp</dimen>
+    <dimen name="_54dp">@dimen/_32sdp</dimen>
+    <dimen name="_64dp">@dimen/_38sdp</dimen>
+    <dimen name="_67dp">@dimen/_40sdp</dimen>
+    <dimen name="_74dp">@dimen/_44sdp</dimen>
+    <dimen name="_80dp">@dimen/_48sdp</dimen>
+
+
+    <dimen name="_10sp">@dimen/_6ssp</dimen>
+    <dimen name="_11sp">@dimen/_6ssp</dimen>
+    <dimen name="_12sp">@dimen/_7ssp</dimen>
+    <dimen name="_14sp">@dimen/_8ssp</dimen>
+    <dimen name="_19sp">@dimen/_11ssp</dimen>
+    <dimen name="_20sp">@dimen/_12ssp</dimen>
+
+</resources>

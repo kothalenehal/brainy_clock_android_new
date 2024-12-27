@@ -1,0 +1,6 @@
+<!-- curved_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:topLeftRadius="20dp"
+        android:topRightRadius="20dp" />
+    <solid android:color="@color/white" /> <!-- Change the background color as needed -->
+</shape>

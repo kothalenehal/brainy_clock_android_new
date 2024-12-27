@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.brainyclockuser.ui.clockin.ShiftsModels" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_shift"
+            style="@style/shift_card"
+            android:outlineAmbientShadowColor="@color/card_shadow_color"
+            android:outlineSpotShadowColor="@color/whitegray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_shift"
+                    style="@style/text_view_style"
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/dm_bold"
+                    android:text="@{model.shiftName}"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tv_shift_time"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_shift_time"
+                    style="@style/text_view_style"
+                    android:fontFamily="@font/dm_bold"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_11sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_shift"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_shift" />
+
+                <ImageView
+                    android:id="@+id/shift_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_clocked_in"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_shift"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_shift"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/shift_done_out"
+                    style="@style/text_view_style"
+                    android:fontFamily="@font/dm_bold"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_11sp"
+                    android:text="clocked out"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_shift"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_shift"
+                    app:layout_constraintVertical_bias="0.0" />
+
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/tv_shift_address"-->
+<!--                    style="@style/text_view_style"-->
+<!--                    android:layout_marginTop="@dimen/_4dp"-->
+<!--                    android:text="Financial Dist, NY"-->
+<!--                    android:textColor="@color/grey"-->
+<!--                    android:textSize="@dimen/_12sp"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_shift" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

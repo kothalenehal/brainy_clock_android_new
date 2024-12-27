@@ -1,0 +1,155 @@
+<resources>
+    <string name="app_name">BrainyClockUser</string>
+
+    <string name="loading">Loading…</string>
+    <string name="api_failure">Api failure</string>
+    <string name="internet_not_available">Please check your internet connection and try again</string>
+    <string name="resource_not_found">Resource not found</string>
+    <string name="server_conflict">Server conflicts</string>
+    <string name="unknown_error_occurred">Unknown error occurred</string>
+
+    <string name="email">Email</string>
+    <string name="enter_your_email_id">Enter your e-mail ID</string>
+    <string name="password">Password</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="enter_your_credentials_to_log_in_nto_your_account">Enter your credentials to log in\nto your account.</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password_helper_text">A strong password is 8-16 characters long and includes at least one number, one letter and a special character.</string>
+    <string name="re_enter_password">Re-enter password</string>
+    <string name="minimum_8_characters">Minimum 8 characters</string>
+    <string name="please_fill_in_the_details_to_create_nyour_account">Please fill in the details to create\nyour account.</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="already_have_an_account_log_in"><u>Already have an account? Log in.</u></string>
+
+    <string name="strWarnPassword">Please enter password</string>
+    <string name="strWarnOldPassword">Please enter old password</string>
+    <string name="strWarnNewPassword">Please enter new password</string>
+    <string name="strValidPassword">Please enter valid password</string>
+    <string name="strValidNewPassword">Please enter valid new password</string>
+    <string name="strWarnRePassword">Please enter password again</string>
+    <string name="strMatchPassword">Password and re-entered password not match</string>
+    <string name="strValidEmail">Please enter valid email Id</string>
+    <string name="strWarnEmail">Please enter email Id</string>
+    <string name="strWarnFirstName">Please enter first name</string>
+    <string name="strWarnLastname">Please enter last name</string>
+    <string name="strWarnCompanyId">Please enter company Id</string>
+    <string name="strWarnEmpId">Please enter employee Id</string>
+    <string name="strReenterPassword">Re-enter password</string>
+    <string name="can_t_remember_whose_birthday_was_your_password_don_t_worry_we_ve_got_your_back">Can’t remember whose birthday was your password? Don’t worry, we’ve got your back.</string>
+    <string name="enter_your_email_id_and_we_will_send_you_a_link_to_reset_your_password">Enter your email ID, and we will send you a link to reset your password.</string>
+    <string name="send_password_reset_link">Send password reset link</string>
+    <string name="shifts">Shifts</string>
+    <string name="schedule">Schedule</string>
+    <string name="click_in">Clock in!</string>
+    <string name="home">Home</string>
+    <string name="employees">Employees</string>
+    <string name="settings">Settings</string>
+
+    <string name="device_paired">Device paired</string>
+    <string name="begin_your_shift">Begin your shift</string>
+    <string name="navigate_to_office">Navigate To Office</string>
+    <string name="scan_qr">SCAN QR</string>
+    <string name="next_shift_mins">Next shift starts in %s</string>
+    <string name="clock_out">Clock out</string>
+    <string name="take_a_break">Take a break</string>
+    <string name="resume_shift">Resume shift</string>
+    <string name="lunch_over">Lunch over</string>
+    <string name="employee_id_">Employee ID : %s</string>
+    <string name="late">Late</string>
+    <string name="on_time">On time</string>
+    <string name="today_s_shifts">Today’s shifts</string>
+    <string name="shift_details">Shift details</string>
+    <string name="assigned_personnel">Assigned personnel</string>
+    <string name="logout">Logout</string>
+    <string name="change_password">Change password</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="notifications_amp_alerts"><![CDATA[Notifications & alerts]]></string>
+    <string name="change_password_msg">You can come back to this screen to change your password anytime you want.</string>
+    <string name="enter_your_current_password">Enter your current password :</string>
+    <string name="current_password">Current password</string>
+    <string name="enter_new_password">Enter new password :</string>
+    <string name="re_enter_new_password">Re-enter new password :</string>
+    <string name="upcoming_shifts">Upcoming shifts</string>
+    <string name="upcoming_shifts_msg">Get notified about your upcoming shifts via push notifications.</string>
+    <string name="updates_to_your_shifts">Updates to your shifts</string>
+    <string name="updates_to_your_shifts_msg">We’ll alert you when your employer updates or revises your shifts.</string>
+    <string name="available_devices">Available devices</string>
+    <string name="paired_devices">Paired devices</string>
+    <string name="other_shifts">Other shifts</string>
+    <string name="no_upcoming_shifts">No upcoming shifts</string>
+    <string name="clocked_out">Clocked out</string>
+    <string name="overtime">+ Overtime</string>
+    <string name="in_overtime">In overtime</string>
+    <string name="na">NA</string>
+    <string name="pending">Pending</string>
+    <string name="request_overtime">Request overtime?</string>
+    <string name="request_overtime_msg">Your request for overtime shall be sent for approval with the administrator. Upon approval, the overtime period will begin after your current shift ends.</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="connect_to_tablet_ndevice_first">Connect to tablet\ndevice first.</string>
+    <string name="msg_bluetooth_connection">To clock in or clock out, you will first need to pair with the tablet device and verify it’s you.</string>
+    <string name="pair">Pair</string>
+    <string name="stop_scanning">Stop Scanning</string>
+    <string name="scan">Scan</string>
+    <string name="employee_id">Employee Id</string>
+    <string name="company_id">Company Id</string>
+
+    <string name="msg_verification_screen">A verification code has been sent to your email. Please enter it to validate your account</string>
+    <string name="enter_code_here">Enter code here</string>
+    <string name="verify">Verify</string>
+    <string name="msg_enter_verification_code">Please enter verification code</string>
+    <string name="msg_forgot_password_screen1">A verification code will send to your registered email.</string>
+    <string name="msg_forgot_password_screen2">Please enter code here and you can now reset your password. Enter your new password here and click submit.</string>
+    <string name="strWarnCode">Please enter verification code</string>
+    <string name="delete_account">Delete Account</string>
+
+
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+
+    <string name="no_shift_for_today">No shift for today.</string>
+    <string name="see_you_tomorrow">See you tomorrow.</string>
+    <string name="thats_all_for_today">That’s all for today.</string>
+    <string name="lunch_break">Lunch break</string>
+    <string name="currently_active">currently active.</string>
+    <string name="next_shift_starts">Next shift starts</string>
+    <string name="you_running_late">You’re running late</string>
+    <string name="for_your_shift_by_">for your shift by %s %s.</string>
+    <string name="in_">in %sh %sm.</string>
+    <string name="until_shift_ends">%sh%sm until your shift ends.</string>
+    <string name="shift_starts_in">Your shift starts in %sh%sm.</string>
+    <string name="upcoming_shift">Upcoming shift</string>
+    <string name="shift_over">Your shift time is over.</string>
+    <string name="minutes">minutes</string>
+    <string name="hours">hours</string>
+    <string name="no_bluetooth_device_found">No Bluetooth device found</string>
+    <string name="shift_a">Shift A</string>
+    <string name="financial_dist_ny">Financial dist, NY</string>
+    <string name="scan_barcode">Scan QR Code</string>
+    <string name="location_verified">Location Verified</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="Clocked_out">Clocked Out</string>
+    <string name="absent1">Absent</string>
+    <string name="late1">Late</string>
+    <string name="clocked_in">Clocked In</string>
+    <string name="all">All</string>
+    <string name="history">History</string>
+
+</resources>

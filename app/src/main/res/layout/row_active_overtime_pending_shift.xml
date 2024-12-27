@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.brainyclockuser.ui.clockin.ShiftsModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/shift_card"
+            android:outlineAmbientShadowColor="@color/yellow"
+            android:outlineSpotShadowColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_shift"
+                    style="@style/text_view_style"
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/dm_bold"
+                    android:text="@{model.shiftName}"
+                    android:textColor="@color/greyText"
+                    android:textSize="@dimen/_12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tv_overtime"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:id="@+id/tv_shift_address"-->
+<!--                    style="@style/text_view_style"-->
+<!--                    android:layout_marginTop="@dimen/_4dp"-->
+<!--                    android:text="Financial Dist, NY"-->
+<!--                    android:textColor="@color/greyText"-->
+<!--                    android:textSize="@dimen/_12sp"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_shift" />-->
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_overtime"
+                    style="@style/text_view_style"
+                    android:background="@drawable/pending_overtime_bg"
+                    android:fontFamily="@font/dm_bold"
+                    android:paddingHorizontal="@dimen/_20dp"
+                    android:paddingVertical="@dimen/_5dp"
+                    android:text="@string/pending"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

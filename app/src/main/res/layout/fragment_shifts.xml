@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="id"
+            type="String" />
+
+        <variable
+            name="day"
+            type="String" />
+
+        <variable
+            name="date"
+            type="String" />
+
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.shifts.ShiftsFragment">
+
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginVertical="@dimen/_16dp"-->
+<!--            android:layout_marginStart="@dimen/_12dp"-->
+<!--            android:tint="@color/grey"-->
+<!--            android:src="@drawable/brainyclock_text_toolbar" />-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_sub_header"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_16dp"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"
+                    android:layout_height="wrap_content"
+                    android:text="@{name}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_sub_header"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_16dp"
+                    android:visibility="gone"
+
+                    android:textColor="@color/text_color"
+                    android:layout_height="wrap_content"
+                    android:text="@{id}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_header"
+                    android:text="@{day}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_sub_header"
+                    android:text="@{date}" />
+
+
+
+                <com.brainyclockuser.ui.shifts.WeekCalendarView
+                    android:id="@+id/weekCalendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+
+
+
+
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_shifts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/row_shift_parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_sub_header"
+                    android:layout_marginTop="@dimen/_19dp"
+                    android:text="@string/other_shifts"
+                    android:visibility="gone"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/shift_sub_header"
+                    android:layout_marginTop="@dimen/_19dp"
+                    android:text="@string/history"
+                    android:textSize="24dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_other_shifts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/row_shift_parent"
+                    android:visibility="gone"/>
+
+
+
+                    <!-- Dynamic hours message -->
+                    <TextView
+                        android:id="@+id/clockedHours"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You have clocked in 0.00 hours during this week."
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/dm_bold"
+                        android:layout_margin="@dimen/_10dp"
+                        android:textColor="@android:color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_copinant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8dp"
+                    android:descendantFocusability="blocksDescendants"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_details_day" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

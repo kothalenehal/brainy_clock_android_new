@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.shifts.ShiftDetailFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:title="@{@string/shift_details}" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_12dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/text_view_style1"
+                    android:fontFamily="@font/dm_bold"
+
+                    android:text="@string/shift_a"
+
+                    android:textSize="@dimen/_20sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/text_view_style1"
+                    android:layout_marginTop="@dimen/_2dp"
+                    android:text="@string/financial_dist_ny" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25dp"
+                    android:descendantFocusability="blocksDescendants" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/text_view_style1"
+                    android:layout_marginTop="@dimen/_67dp"
+                    android:fontFamily="@font/dm_bold"
+                    android:text="@string/assigned_personnel"
+                    android:textSize="@dimen/_20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_assignee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25dp"
+                    android:descendantFocusability="blocksDescendants" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

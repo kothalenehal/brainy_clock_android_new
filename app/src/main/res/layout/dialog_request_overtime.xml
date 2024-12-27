@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_rounded"
+        android:paddingHorizontal="@dimen/_25dp"
+        android:paddingVertical="@dimen/_22dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            style="@style/text_view_style"
+            android:fontFamily="@font/dm_bold"
+            android:text="@string/request_overtime"
+            android:textSize="@dimen/_19sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_msg"
+            style="@style/text_view_style"
+            android:layout_marginTop="@dimen/_12dp"
+            android:text="@string/request_overtime_msg"
+            android:textSize="@dimen/_11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_cancel"
+            style="@style/text_view_style"
+            android:layout_marginTop="@dimen/_19dp"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/dm_bold"
+            android:padding="@dimen/_12dp"
+            android:text="@string/cancel"
+            android:textColor="@color/Orange"
+            android:textSize="@dimen/_11sp"
+            app:layout_constraintRight_toLeftOf="@id/tv_submit"
+            app:layout_constraintTop_toBottomOf="@id/tv_msg" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_submit"
+            style="@style/text_view_style"
+            android:layout_marginTop="@dimen/_19dp"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/dm_bold"
+            android:padding="@dimen/_12dp"
+            android:text="@string/submit"
+            android:textColor="@color/Orange"
+            android:textSize="@dimen/_11sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_msg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

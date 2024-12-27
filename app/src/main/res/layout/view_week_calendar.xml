@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="@dimen/_10dp"
+        android:gravity="center_vertical">
+
+        <!-- Back Arrow Button -->
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back arrow"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter" />
+
+        <!-- Container for Title and Date Range TextViews -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Week Title TextView -->
+            <TextView
+                android:id="@+id/weekTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This Week"
+                android:textSize="16dp"
+                android:fontFamily="@font/dm_bold"
+                android:textColor="@color/text_shift"
+                android:textStyle="bold" />
+
+            <!-- Date Range TextView -->
+            <TextView
+                android:id="@+id/dateRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:fontFamily="@font/dm_bold"
+                android:text="Oct 21 - Oct 27"
+                android:textSize="16dp"
+                android:textColor="@color/text_shift" />
+        </LinearLayout>
+
+        <!-- Forward Arrow Button -->
+        <ImageButton
+            android:id="@+id/forwardArrow"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Forward arrow"
+            android:rotation="180"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+
+</merge>

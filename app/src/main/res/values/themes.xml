@@ -1,0 +1,193 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BrainyClockUser" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/Orange</item>
+        <item name="colorPrimaryVariant">@color/light_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purple</item>
+        <item name="colorSecondaryVariant">@color/light_purple</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="text_view_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/_12dp</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+    <style name="text_view_style1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/whitegray</item>
+        <item name="android:textSize">@dimen/_12dp</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+    <style name="text_view_style_one">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_12dp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+
+    <style name="card_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:outlineAmbientShadowColor">@color/card_shadow_color</item>
+        <item name="android:outlineSpotShadowColor">@color/card_shadow_color</item>
+        <item name="cardCornerRadius">@dimen/_6dp</item>
+        <item name="cardElevation">@dimen/_8dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/_10dp</item>
+        <item name="android:layout_marginTop">@dimen/_3dp</item>
+        <item name="android:layout_marginBottom">@dimen/_10dp</item>
+    </style>
+
+    <style name="blue_button_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dm_bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="cornerRadius">@dimen/_6dp</item>
+        <item name="marginHorizontal">@dimen/_20dp</item>
+        <!--        <item name="android:paddingHorizontal">@dimen/_20dp</item>-->
+        <item name="android:paddingVertical">@dimen/_12dp</item>
+        <item name="backgroundTint">@color/grey</item>
+        <item name="android:outlineSpotShadowColor">@color/card_shadow_color</item>
+        <item name="android:outlineAmbientShadowColor">@color/card_shadow_color</item>
+    </style>
+
+    <style name="white_button_style" parent="blue_button_style">
+        <item name="android:textColor">@color/grey</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="editText" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/grey</item>
+        <item name="boxStrokeWidth">@dimen/_1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_6dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_6dp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_6dp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_6dp</item>
+        <item name="hintTextColor">@color/text_color</item>
+        <item name="hintTextAppearance">@style/EditTextHintTextStyle</item>
+        <item name="errorTextAppearance">@style/ErrorTextStyle</item>
+        <item name="placeholderTextAppearance">@style/PlaceHolderTextStyle</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="endIconTint">@color/endIconColor</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="textInputEditText">
+        <item name="fontFamily">@font/dm_regular</item>
+        <item name="android:textSize">@dimen/_12sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:paddingVertical">@dimen/_13dp</item>
+    </style>
+
+    <style name="EditTextHintTextStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_11sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+    <style name="ErrorTextStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_10sp</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+    <style name="PlaceHolderTextStyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_11sp</item>
+        <item name="android:fontFamily">@font/dm_italic</item>
+    </style>
+
+    <style name="bottom_nav_text_active">
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:textSize">@dimen/_9dp</item>
+        <item name="android:fontFamily">@font/dm_bold</item>
+    </style>
+
+    <style name="bottom_nav_text_inactive">
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:textSize">@dimen/_8dp</item>
+        <item name="android:fontFamily">@font/dm_regular</item>
+    </style>
+
+    <style name="setting_menu_text" parent="text_view_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:drawablePadding">@dimen/_19dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/_15dp</item>
+        <item name="android:textSize">@dimen/_14sp</item>
+    </style>
+
+    <style name="custom_switch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/Orange</item>
+        <item name="colorSwitchThumbNormal">@color/LighterGray</item>
+        <item name="android:colorForeground">@color/LighterGray</item>
+    </style>
+
+    <style name="shift_header" parent="text_view_style">
+        <item name="android:layout_marginTop">@dimen/_19dp</item>
+        <item name="android:layout_marginStart">@dimen/_12dp</item>
+        <item name="android:textColor">@color/text_shift</item>
+        <item name="android:fontFamily">@font/dm_bold</item>
+        <item name="android:textSize">@dimen/_19sp</item>
+    </style>
+
+    <style name="shift_sub_header" parent="shift_header">
+        <item name="android:layout_marginTop">@dimen/_1dp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:fontFamily">@font/dm_bold</item>
+
+    </style>
+
+
+    <style name="shift_card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_8dp</item>
+        <item name="cardCornerRadius">@dimen/_6dp</item>
+        <item name="cardElevation">@dimen/_8dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+
+    <style name="emp_card">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_8dp</item>
+        <item name="cardCornerRadius">@dimen/_6dp</item>
+        <item name="cardElevation">@dimen/_8dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+    </style>
+
+    <style name="InvisibleText">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+</resources>

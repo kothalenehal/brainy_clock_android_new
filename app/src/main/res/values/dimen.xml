@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  the value of this dimens is Figma dp - 20% ex. 83px - 20% = 66sdp -->
+
+    <dimen name="_1dp">@dimen/_1sdp</dimen>
+    <dimen name="_2dp">@dimen/_2sdp</dimen>
+    <dimen name="_3dp">@dimen/_3sdp</dimen>
+    <dimen name="_4dp">@dimen/_4sdp</dimen>
+    <dimen name="_5dp">@dimen/_5sdp</dimen>
+    <dimen name="_6dp">@dimen/_6sdp</dimen>
+    <dimen name="_7dp">@dimen/_7sdp</dimen>
+    <dimen name="_8dp">@dimen/_8sdp</dimen>
+    <dimen name="_9dp">@dimen/_9sdp</dimen>
+    <dimen name="_10dp">@dimen/_10sdp</dimen>
+    <dimen name="_11dp">@dimen/_11sdp</dimen>
+    <dimen name="_12dp">@dimen/_12sdp</dimen>
+    <dimen name="_13dp">@dimen/_13sdp</dimen>
+    <dimen name="_14dp">@dimen/_14sdp</dimen>
+    <dimen name="_15dp">@dimen/_15sdp</dimen>
+    <dimen name="_16dp">@dimen/_16sdp</dimen>
+    <dimen name="_19dp">@dimen/_19sdp</dimen>
+    <dimen name="_20dp">@dimen/_20sdp</dimen>
+    <dimen name="_22dp">@dimen/_22sdp</dimen>
+    <dimen name="_25dp">@dimen/_25sdp</dimen>
+    <dimen name="_26dp">@dimen/_26sdp</dimen>
+    <dimen name="_27dp">@dimen/_27sdp</dimen>
+    <dimen name="_28dp">@dimen/_28sdp</dimen>
+    <dimen name="_30dp">@dimen/_30sdp</dimen>
+    <dimen name="_32dp">@dimen/_32sdp</dimen>
+    <dimen name="_35dp">@dimen/_35sdp</dimen>
+    <dimen name="_38dp">@dimen/_38sdp</dimen>
+    <dimen name="_44dp">@dimen/_44sdp</dimen>
+    <dimen name="_46dp">@dimen/_46sdp</dimen>
+    <dimen name="_48dp">@dimen/_48sdp</dimen>
+    <dimen name="_51dp">@dimen/_51sdp</dimen>
+    <dimen name="_54dp">@dimen/_54sdp</dimen>
+    <dimen name="_64dp">@dimen/_64sdp</dimen>
+    <dimen name="_67dp">@dimen/_67sdp</dimen>
+    <dimen name="_74dp">@dimen/_74sdp</dimen>
+    <dimen name="_80dp">@dimen/_80sdp</dimen>
+
+
+
+
+
+    <dimen name="_10sp">@dimen/_10ssp</dimen>
+    <dimen name="_11sp">@dimen/_11ssp</dimen>
+    <dimen name="_12sp">@dimen/_12ssp</dimen>
+    <dimen name="_14sp">@dimen/_14ssp</dimen>
+    <dimen name="_19sp">@dimen/_19ssp</dimen>
+    <dimen name="_20sp">@dimen/_20ssp</dimen>
+
+</resources>

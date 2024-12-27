@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_shifts"
+        android:icon="@drawable/menu_shifts_state"
+        android:title="@string/shifts" />
+    <item
+        android:id="@+id/menu_clockin"
+        android:icon="@drawable/menu_clockin_state"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/menu_employees"
+        android:icon="@drawable/menu_employee_state"
+        android:title="@string/employees" />
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/menu_settings_state"
+        android:title="@string/settings" />
+</menu>

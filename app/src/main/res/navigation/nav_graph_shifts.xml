@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_shifts"
+    app:startDestination="@id/shiftsFragment">
+
+    <fragment
+        android:id="@+id/shiftsFragment"
+        android:name="com.brainyclockuser.ui.shifts.ShiftsFragment"
+        android:label="ShiftsFragment"
+        tools:layout="@layout/fragment_shifts">
+        <action
+            android:id="@+id/action_shiftsFragment_to_shiftDetailFragment"
+            app:destination="@id/shiftDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shiftDetailFragment"
+        android:name="com.brainyclockuser.ui.shifts.ShiftDetailFragment"
+        android:label="ShiftDetailFragment"
+        tools:layout="@layout/fragment_shift_detail" />
+</navigation>

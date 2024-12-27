@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_bluetooth_frg"
+    app:startDestination="@id/clockInFragment">
+
+    <fragment
+        android:id="@+id/clockInFragment"
+        android:name="com.brainyclockuser.ui.clockin.ClockInFragment"
+        android:label="ClockInFragment"
+        tools:layout="@layout/fragment_clock_in">
+
+        <action
+            android:id="@+id/action_clockInFragment_to_bluetoothFragment2"
+            app:destination="@id/bluetoothFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bluetoothFragment"
+        android:name="com.brainyclockuser.ui.settings.BluetoothFragment"
+        android:label="BluetoothFragment"
+        tools:layout="@layout/fragment_bluetooth">
+
+    </fragment>
+</navigation>

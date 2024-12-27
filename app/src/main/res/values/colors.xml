@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple">#EE7444</color>
+    <color name="light_purple">#D1C4E9</color>
+    <color name="dark_purple">#512DA8</color>
+
+    <color name="border_btn_bg">#FAFAFA</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="line">#DDD8D0</color>
+
+    <color name="text_shift">#3C3B3B</color>
+    <color name="text_color">#4E4E4E</color>
+    <color name="light_text_color">#979797</color>
+    <color name="sub_header_purple">#B39DDB</color>
+    <color name="shift_row_text_color">#673AB7</color>
+    <color name="other_shift_row_text_color">#9575CD</color>
+
+    <color name="card_shadow_color">#4E4E4E</color>
+
+    <color name="box_stroke_color">@color/black</color>
+    <color name="endIconColor">#DBDBDB</color>
+    <color name="shift_shadow_color">#334E4E33</color>
+
+    <color name="disable_button">#EDE7F6</color>
+    <color name="light_purple_90">#E6D1C4E9</color>
+
+    <color name="red">#FF5050</color>
+    <color name="green">#A2DF1F</color>
+    <color name="yellow">#FFC470</color>
+    <color name="light_pink">#D09BE9</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="grey">#403D39</color>
+    <color name="Orange">#EE7444</color>
+    <color name="LighterGray">#DDD8D0</color>
+    <color name="whitegray">#EBEBEB</color>
+    <color name="greyText">#4E4E4E</color>
+
+    <color name="detail_day_back">#FAFAFA</color>
+
+
+    background: #;
+
+</resources>

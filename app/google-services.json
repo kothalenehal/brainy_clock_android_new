@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "57409479914",
+    "project_id": "brainyclock-398716",
+    "storage_bucket": "brainyclock-398716.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57409479914:android:94d09edeca901a79d8e393",
+        "android_client_info": {
+          "package_name": "com.brainyclockuser"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvSdslV5OSgi5g5yTEFDk7pkSmuvaJuA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="canBegin"
+            type="Boolean" />
+
+        <variable
+            name="nextShift"
+            type="Boolean" />
+
+        <variable
+            name="nextShiftTime"
+            type="String" />
+
+        <variable
+            name="noUpcoming"
+            type="Boolean" />
+
+        <variable
+            name="clockedOut"
+            type="Boolean" />
+
+        <variable
+            name="lunchIn"
+            type="Boolean" />
+
+        <variable
+            name="resumeShift"
+            type="Boolean" />
+
+        <variable
+            name="lunchOver"
+            type="Boolean" />
+
+        <variable
+            name="bleConnected"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.clockin.ClockInFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12dp"
+                android:src="@drawable/brainyclock_text_toolbar"
+                android:tint="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_qr_scanner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:foregroundGravity="center_vertical"
+                android:src="@{@drawable/ic_scanner}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/iv_bluetooth"
+                app:layout_constraintHeight_percent="0.6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_bluetooth"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:foregroundGravity="center_vertical"
+                android:src="@{bleConnected ? @drawable/bluetooth : @drawable/bluetooth_offline}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_header"
+            style="@style/shift_header"
+            android:layout_marginTop="@dimen/_35dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_sub_header"
+            style="@style/shift_sub_header"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_header" />
+
+        <Button
+            android:id="@+id/btn_upload_selfie"
+            app:layout_constraintBottom_toTopOf="@id/ll_buttons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Selfie"
+             />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="50"
+            android:max="100"
+            android:visibility="gone"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/rv_shifts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:progressDrawable="@drawable/progress_bar_custom"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shifts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_8dp"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintBottom_toTopOf="@id/ll_buttons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sub_header"
+            app:layout_constraintVertical_bias="0.476"
+            tools:itemCount="2"
+            tools:listitem="@layout/row_upcoming_shift" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@id/ll_buttons"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/ll_buttons"
+            tools:context=".MainActivity">
+
+            <!-- Title Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Who's in?"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/btn_whos_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See who's in >"
+                    android:textSize="14sp"
+                    android:textColor="#FF6F00"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Status Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/who_is_in"
+                android:padding="8dp"
+                android:weightSum="2"
+               >
+
+                <!-- First Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/who_clocked_in"
+                             />
+
+                        <TextView
+                            android:id="@+id/who_clocked_in"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:text="0 clocked in"
+                            android:textSize="14sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/who_late_arrival"
+                             />
+
+                        <TextView
+                            android:id="@+id/who_late_arrival"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:text="0 late arrivals"
+                            android:textSize="14sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Second Column -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/who_absent"
+                             />
+
+                        <TextView
+                            android:id="@+id/who_absent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:text="0 absent"
+                            android:textSize="14sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/who_clocked_out"
+                             />
+
+                        <TextView
+                            android:id="@+id/who_clocked_out"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:text="0 clocked out"
+                            android:textSize="14sp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_12dp"
+            android:paddingBottom="@dimen/_20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_begin_your_shift"
+                style="@style/blue_button_style"
+                android:paddingHorizontal="@dimen/_25dp"
+                android:text="@string/navigate_to_office"
+                android:visibility="@{canBegin ? View.VISIBLE : View.GONE}" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_next_shift_mins"
+                style="@style/blue_button_style"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                android:paddingHorizontal="@dimen/_30dp"
+                android:text="@{@string/next_shift_mins(nextShiftTime)}"
+                android:textColor="@color/LighterGray"
+                android:visibility="@{nextShift ? View.VISIBLE : View.GONE}"
+                app:backgroundTint="@color/border_btn_bg"
+                app:strokeColor="@color/grey"
+
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_clock_out"
+                style="@style/blue_button_style"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:layout_weight="1"
+                android:paddingHorizontal="0dp"
+                android:text="@string/clock_out"
+                android:visibility="@{clockedOut ? View.VISIBLE : View.GONE}" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_take_a_break"
+                style="@style/white_button_style"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_weight="1"
+                android:paddingHorizontal="0dp"
+                android:text="@string/take_a_break"
+                android:textColor="@color/grey"
+                android:visibility="@{lunchIn ? View.VISIBLE : View.GONE}"
+                app:backgroundTint="@color/border_btn_bg"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="@dimen/_1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_resume_shift"
+                style="@style/blue_button_style"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_weight="1"
+                android:paddingHorizontal="0dp"
+                android:text="@string/resume_shift"
+                android:textColor="@color/grey"
+                android:visibility="@{resumeShift ? View.VISIBLE : View.GONE}"
+                app:backgroundTint="@color/border_btn_bg"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="@dimen/_1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_lunch_over"
+                style="@style/blue_button_style"
+                android:layout_width="10dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:paddingHorizontal="0dp"
+                android:text="@string/take_a_break"
+                android:textColor="@color/grey"
+                android:visibility="@{lunchOver ? View.GONE : View.GONE}"
+                app:backgroundTint="@color/border_btn_bg" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_no_upcoming_shifts"
+                style="@style/blue_button_style"
+                android:enabled="false"
+                android:text="@string/no_upcoming_shifts"
+                android:textColor="@color/LighterGray"
+                android:visibility="@{noUpcoming ? View.VISIBLE : View.GONE}"
+                app:backgroundTint="@color/whitegray" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_14dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_check"
+            style="@style/blue_button_style"
+            android:layout_margin="@dimen/_32dp"
+            android:paddingHorizontal="@dimen/_25dp"
+            android:text="TEst"
+            android:textColor="@color/Orange"
+            android:visibility="gone"
+            app:backgroundTint="@color/border_btn_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/Orange"
+            app:strokeWidth="@dimen/_1dp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

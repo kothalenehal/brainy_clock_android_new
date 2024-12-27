@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.settings.NotificationsFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/notifications_amp_alerts}" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_upcoming_shifts"
+            style="@style/text_view_style"
+            android:layout_marginTop="@dimen/_38dp"
+            android:fontFamily="@font/dm_bold"
+            android:text="@string/upcoming_shifts"
+
+            app:layout_constraintLeft_toLeftOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_upcoming_shifts_msg"
+            style="@style/text_view_style"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:text="@string/upcoming_shifts_msg"
+            app:layout_constraintLeft_toLeftOf="@id/gl_start"
+            app:layout_constraintRight_toLeftOf="@id/switch_upcoming_shift"
+            app:layout_constraintTop_toBottomOf="@id/tv_upcoming_shifts" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_upcoming_shift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:theme="@style/custom_switch"
+            app:layout_constraintRight_toRightOf="@id/gl_end"
+            app:layout_constraintTop_toTopOf="@id/tv_upcoming_shifts" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_updates_to_your_shifts"
+            style="@style/text_view_style"
+            android:layout_marginTop="@dimen/_38dp"
+            android:fontFamily="@font/dm_bold"
+            android:text="@string/updates_to_your_shifts"
+            app:layout_constraintLeft_toLeftOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_upcoming_shifts_msg" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_updates_to_your_shifts_msg"
+            style="@style/text_view_style"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:text="@string/updates_to_your_shifts_msg"
+            app:layout_constraintLeft_toLeftOf="@id/gl_start"
+            app:layout_constraintRight_toLeftOf="@id/switch_upcoming_shift"
+            app:layout_constraintTop_toBottomOf="@id/tv_updates_to_your_shifts" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_updates_to_your_shifts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/custom_switch"
+            app:layout_constraintRight_toRightOf="@id/gl_end"
+            app:layout_constraintTop_toTopOf="@id/tv_updates_to_your_shifts" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

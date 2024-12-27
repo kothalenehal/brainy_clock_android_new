@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="btnTitle"
+            type="String" />
+
+        <variable
+            name="noDeviceFound"
+            type="Boolean" />
+
+        <variable
+            name="progressBar"
+            type="Boolean" />
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.settings.BluetoothFragment">
+
+        <include
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            layout="@layout/toolbar"
+            app:title="@{@string/bluetooth}" />
+
+        <!--<include
+            android:id="@+id/llProgressBar"
+            android:visibility="gone"
+            layout="@layout/progress_dialog"/>-->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rock"
+            android:layout_marginBottom="-40dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cloudl"
+            android:scaleType="centerCrop"
+
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cloudr"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="-40dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="@dimen/_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/text_view_style"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/dm_bold"
+                    android:text="@string/available_devices"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/_14sp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress_circular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:progress="50"
+                    android:visibility="@{btnTitle == @string/scan ? View.INVISIBLE : View.VISIBLE}"
+                    app:indicatorColor="@color/Orange"
+                    app:indicatorSize="@dimen/_15dp"
+                    app:trackThickness="@dimen/_2dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_available_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6dp"
+                android:layout_weight="1"
+                android:descendantFocusability="blocksDescendants"
+                android:visibility="@{noDeviceFound ? View.GONE : View.VISIBLE}" />
+            <!--  <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listView"/>-->
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/text_view_style"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_32dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/no_bluetooth_device_found"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_14sp"
+                android:visibility="@{noDeviceFound ? View.VISIBLE : View.GONE}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/text_view_style"
+                android:layout_marginTop="@dimen/_32dp"
+                android:fontFamily="@font/dm_bold"
+                android:text="@string/paired_devices"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_14sp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_paired_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6dp"
+                android:descendantFocusability="blocksDescendants"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scan"
+                style="@style/blue_button_style"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_5dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:text="@{btnTitle}" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <!--  <androidx.appcompat.widget.LinearLayoutCompat
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/bg_round"
+              android:gravity="center"
+              android:layout_gravity="center"
+              android:orientation="vertical"
+              android:padding="@dimen/_25dp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+              <ProgressBar
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" />
+
+              <com.google.android.material.textview.MaterialTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/_10dp"
+                  android:text="Please Wait"
+                  android:textSize="@dimen/_14sp"
+                  android:textStyle="bold" />
+          </androidx.appcompat.widget.LinearLayoutCompat>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
